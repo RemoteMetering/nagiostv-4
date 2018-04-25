@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  nagiostv:
+    restart: always
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8084:4200
