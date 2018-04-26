@@ -14,7 +14,11 @@ COPY . /usr/app
 RUN npm install -g bower; \
   npm install -g ember-cli; \
   npm install; \
-  bower install --allow-root;
+  bower install --allow-root; \
+  cd node; \
+  npm install;
+
+WORKDIR /usr/app/node
 
 # replace this with your application's default port
-CMD [ "yarn", "start" ]
+CMD [ "bash", "start.sh" ]
